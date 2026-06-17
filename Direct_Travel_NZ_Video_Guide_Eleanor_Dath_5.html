@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Direct Travel — NZ Capture Guide: Eleanor Dath</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:      #243D94;
+    --charcoal:  #373B43;
+    --teal:      #40C0C0;
+    --white:     #ffffff;
+    --off-white: #F4F4F4;
+    --light-gray:#e8e8e8;
+    --mid-gray:  #9a9a9a;
+    --text:      #373B43;
+    --text-light:#6b6f77;
+    --rule:      #dde0e8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Work Sans', 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: 300;
+    color: var(--text);
+    background: var(--off-white);
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  /* ── NAV ── */
+  #site-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 200;
+    background: var(--charcoal);
+    height: 52px;
+    border-bottom: 3px solid var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+  }
+  .nav-brand {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-decoration: none;
+  }
+  .nav-home-link {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .nav-home-link:hover { color: var(--white); }
+
+  /* ── LAYOUT ── */
+  .page-wrap {
+    display: flex;
+    padding-top: 52px;
+    min-height: 100vh;
+  }
+
+  /* ── SIDEBAR ── */
+  #sidebar {
+    width: 240px;
+    min-width: 240px;
+    background: var(--white);
+    border-right: 1px solid var(--rule);
+    position: fixed;
+    top: 52px;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    z-index: 100;
+  }
+  #sidebar::-webkit-scrollbar { width: 4px; }
+  #sidebar::-webkit-scrollbar-track { background: transparent; }
+  #sidebar::-webkit-scrollbar-thumb { background: var(--rule); }
+
+  .sidebar-section {
+    padding: 20px 0 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .sidebar-section:last-child { border-bottom: none; }
+
+  .sidebar-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+    padding: 0 20px 10px;
+    display: block;
+  }
+
+  .sidebar-link {
+    display: block;
+    padding: 7px 20px;
+    font-size: 12.5px;
+    font-weight: 400;
+    color: var(--text-light);
+    text-decoration: none;
+    line-height: 1.4;
+    transition: background 0.1s, color 0.1s;
+    border-left: 2px solid transparent;
+  }
+  .sidebar-link:hover {
+    background: var(--off-white);
+    color: var(--navy);
+    border-left-color: var(--navy);
+  }
+
+  /* ── MAIN CONTENT ── */
+  #main {
+    margin-left: 240px;
+    flex: 1;
+  }
+
+  /* ── HERO ── */
+  #hero {
+    background: var(--navy);
+    padding: 64px 56px 52px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .hero-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 14px;
+  }
+  #hero h1 {
+    font-size: clamp(26px, 3.5vw, 38px);
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+    margin-bottom: 18px;
+    max-width: 560px;
+  }
+  #hero p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    max-width: 480px;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  /* ── HOME GRID ── */
+  #home-grid {
+    padding: 48px 56px 80px;
+    max-width: 900px;
+  }
+
+  .grid-section { margin-bottom: 52px; }
+  .grid-section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 20px;
+  }
+
+  .card-grid {
+    display: grid;
+    gap: 2px;
+  }
+  .basics-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+  .days-grid   { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+
+  .card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    padding: 22px 20px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.15s;
+  }
+  .card:hover { background: var(--navy); }
+  .card:hover .card-title { color: var(--white); }
+  .card:hover .card-desc  { color: rgba(255,255,255,0.5); }
+  .card:hover .card-arrow { color: var(--teal); }
+
+  .card-icon  { font-size: 18px; margin-bottom: 10px; }
+  .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    margin-bottom: 6px;
+    line-height: 1.3;
+    transition: color 0.15s;
+  }
+  .card-desc {
+    font-size: 11.5px;
+    color: var(--text-light);
+    line-height: 1.5;
+    flex: 1;
+    transition: color 0.15s;
+  }
+  .card-arrow {
+    margin-top: 16px;
+    font-size: 14px;
+    color: var(--rule);
+    transition: color 0.15s;
+  }
+
+  /* ── CONTENT SECTIONS ── */
+  .content-section {
+    border-top: 3px solid var(--navy);
+    margin-top: 0;
+    scroll-margin-top: 72px;
+  }
+
+  .section-header {
+    background: var(--charcoal);
+    padding: 36px 56px 28px;
+  }
+  .section-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 10px;
+  }
+  .section-header h2 {
+    font-size: clamp(18px, 2.5vw, 26px);
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+  .section-intro {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    max-width: 540px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .section-body {
+    padding: 40px 56px 56px;
+    max-width: 740px;
+  }
+
+  .section-body h3 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-top: 36px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .section-body p {
+    font-size: 14.5px;
+    color: var(--text);
+    margin-bottom: 14px;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .section-body ul {
+    list-style: none;
+    margin-bottom: 20px;
+  }
+  .section-body ul li {
+    font-size: 14.5px;
+    color: var(--text);
+    padding: 8px 0 8px 22px;
+    position: relative;
+    border-bottom: 1px solid var(--rule);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+  .section-body ul li:first-child { border-top: 1px solid var(--rule); }
+  .section-body ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    color: var(--navy);
+    font-size: 11px;
+  }
+
+  .section-body ol {
+    list-style: none;
+    counter-reset: steps;
+    margin-bottom: 20px;
+  }
+  .section-body ol li {
+    counter-increment: steps;
+    font-size: 14.5px;
+    color: var(--text);
+    padding: 10px 0 10px 38px;
+    position: relative;
+    border-bottom: 1px solid var(--rule);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+  .section-body ol li:first-child { border-top: 1px solid var(--rule); }
+  .section-body ol li::before {
+    content: counter(steps);
+    position: absolute;
+    left: 0;
+    top: 11px;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--white);
+    background: var(--navy);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    letter-spacing: 0;
+  }
+
+  .callout {
+    background: var(--navy);
+    border-left: 3px solid var(--teal);
+    padding: 15px 18px;
+    margin: 22px 0;
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.65;
+    font-style: italic;
+    font-weight: 300;
+  }
+  .callout strong {
+    color: var(--teal);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .note {
+    background: #eef2fb;
+    border-left: 3px solid var(--navy);
+    padding: 13px 16px;
+    margin: 18px 0;
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.65;
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .compliance-tag {
+    display: inline-block;
+    background: var(--teal);
+    color: var(--white);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 3px 8px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .hashtag-block {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    padding: 18px 22px;
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  .hashtag {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--navy);
+    background: var(--off-white);
+    border: 1px solid var(--rule);
+    padding: 4px 10px;
+    border-radius: 2px;
+    letter-spacing: 0.02em;
+  }
+
+  .checklist-block {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    padding: 22px 26px;
+    margin: 28px 0;
+  }
+  .checklist-block .cb-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .checklist-block ul { margin: 0; }
+  .checklist-block ul li { border-top: none !important; }
+  .checklist-block ul li:first-child { border-top: none !important; }
+
+  .day-meta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+    margin-top: 8px;
+  }
+  .day-meta-item {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    background: var(--off-white);
+    border: 1px solid var(--rule);
+    padding: 5px 10px;
+    border-radius: 2px;
+  }
+
+  .bold-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    margin: 20px 0 4px;
+  }
+
+  /* ── BACK TO TOP ── */
+  .back-top {
+    display: inline-block;
+    margin-top: 32px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 2px;
+  }
+  .back-top:hover { border-bottom-color: var(--navy); }
+
+  /* ── FOOTER ── */
+  #footer {
+    background: var(--charcoal);
+    padding: 28px 56px;
+    margin-left: 0;
+    border-top: 3px solid var(--navy);
+  }
+  #footer p {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    #sidebar { display: none; }
+    #main { margin-left: 0; }
+    #hero, .section-header, .section-body, #home-grid { padding-left: 24px; padding-right: 24px; }
+    #site-nav { padding: 0 20px; }
+    .basics-grid, .days-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ── EMOJI SIZING ── */
+  .section-body h3 {
+    font-size: 12px;
+  }
+  .section-body h3 .eh {
+    font-size: 18px;
+    margin-right: 6px;
+    vertical-align: middle;
+    font-style: normal;
+  }
+
+  .day-emoji {
+    font-size: 52px;
+    line-height: 1;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .section-header h2 .day-num {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--teal);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  /* ── UPLOAD BUTTON ── */
+  .upload-block {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--teal);
+    padding: 14px 18px;
+    margin: 24px 0 32px;
+    flex-wrap: wrap;
+  }
+  .upload-block-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    flex: 1;
+    min-width: 160px;
+  }
+  .upload-block-label span {
+    display: block;
+    font-size: 11.5px;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--mid-gray);
+    margin-top: 2px;
+  }
+  .btn-upload {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 18px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s;
+    white-space: nowrap;
+  }
+  .btn-upload:hover { background: var(--teal); }
+  .btn-upload .btn-icon { font-size: 14px; }
+
+  .primary-folder-block {
+    background: var(--off-white);
+    border: 1px solid var(--rule);
+    padding: 16px 20px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .primary-folder-block p {
+    font-size: 13px;
+    color: var(--text-light);
+    margin: 0;
+    flex: 1;
+    line-height: 1.5;
+  }
+  .btn-folder {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--charcoal);
+    color: var(--white);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 9px 16px;
+    transition: background 0.15s;
+    white-space: nowrap;
+  }
+  .btn-folder:hover { background: var(--navy); }
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav id="site-nav">
+  <span class="nav-brand">Direct Travel — NZ Capture Guide</span>
+  <a class="nav-home-link" href="#top">↑ Top</a>
+</nav>
+
+<div class="page-wrap" id="top">
+
+  <!-- ═══ SIDEBAR ═══ -->
+  <nav id="sidebar">
+    <div class="sidebar-section">
+      <span class="sidebar-label">Overview</span>
+      <a class="sidebar-link" href="#ambassador">TNZ Ambassador Program</a>
+      <a class="sidebar-link" href="#compliance">Compliance &amp; Hashtags</a>
+    </div>
+    <div class="sidebar-section">
+      <span class="sidebar-label">The Basics</span>
+      <a class="sidebar-link" href="#core-rules">Core Rules</a>
+      <a class="sidebar-link" href="#phone-setup">Phone Setup</a>
+      <a class="sidebar-link" href="#framing">Framing</a>
+      <a class="sidebar-link" href="#movement">Movement</a>
+      <a class="sidebar-link" href="#lighting">Lighting</a>
+      <a class="sidebar-link" href="#audio">Audio</a>
+      <a class="sidebar-link" href="#people">People in Frame</a>
+      <a class="sidebar-link" href="#uploading">Uploading</a>
+    </div>
+    <div class="sidebar-section">
+      <span class="sidebar-label">Day by Day</span>
+      <a class="sidebar-link" href="#day1">Day 1 — Wellington (Arrive)</a>
+      <a class="sidebar-link" href="#day2">Day 2 — Wairarapa</a>
+      <a class="sidebar-link" href="#day3">Day 3 — Rotorua &amp; Te Pā Tū</a>
+      <a class="sidebar-link" href="#day4">Day 4 — Wai Ariki, Te Puia &amp; Redwoods</a>
+      <a class="sidebar-link" href="#day5">Day 5 — Hawke's Bay (Arrive)</a>
+      <a class="sidebar-link" href="#day6">Day 6 — Hawke's Bay (Full Day)</a>
+      <a class="sidebar-link" href="#day7">Day 7 — Auckland (Arrive)</a>
+      <a class="sidebar-link" href="#day8">Day 8 — Waiheke Island</a>
+      <a class="sidebar-link" href="#day9">Day 9 — Depart</a>
+    </div>
+    <div class="sidebar-section">
+      <span class="sidebar-label">Reference</span>
+      <a class="sidebar-link" href="#nz-content-tips">NZ-Specific Content Tips</a>
+      <a class="sidebar-link" href="#checklist">Quick Checklist</a>
+    </div>
+  </nav>
+
+  <!-- ═══ MAIN ═══ -->
+  <div id="main">
+
+    <!-- HERO -->
+    <div id="hero">
+      <p class="hero-eyebrow">Direct Travel — TNZ Ambassador Program</p>
+      <h1>New Zealand<br>Video Capture Guide</h1>
+      <p>Day-by-day shooting guidance for the MICHELIN Food &amp; Beverage Trade FAM. June 23 – July 1, 2026. Ambassador: Eleanor Dath, Direct Travel.</p>
+    </div>
+
+    <!-- HOME GRID -->
+    <div id="home-grid">
+
+      <div class="grid-section">
+        <p class="grid-section-label">Start Here</p>
+        <div class="card-grid basics-grid">
+          <a class="card" href="#ambassador">
+            <div class="card-icon">🇳🇿</div>
+            <div class="card-title">TNZ Program</div>
+            <div class="card-desc">Deliverables, objectives, what DT needs</div>
+            <div class="card-arrow">→</div>
+          </a>
+          <a class="card" href="#compliance">
+            <div class="card-icon">#</div>
+            <div class="card-title">Compliance</div>
+            <div class="card-desc">Required hashtags and posting rules</div>
+            <div class="card-arrow">→</div>
+          </a>
+          <a class="card" href="#core-rules">
+            <div class="card-icon">📐</div>
+            <div class="card-title">Core Rules</div>
+            <div class="card-desc">The non-negotiables that apply every day</div>
+            <div class="card-arrow">→</div>
+          </a>
+          <a class="card" href="#phone-setup">
+            <div class="card-icon">📱</div>
+            <div class="card-title">Phone Setup</div>
+            <div class="card-desc">Resolution, stabilization, and settings</div>
+            <div class="card-arrow">→</div>
+          </a>
+          <a class="card" href="#lighting">
+            <div class="card-icon">☀️</div>
+            <div class="card-title">Lighting</div>
+            <div class="card-desc">NZ winter light is low and golden — use it</div>
+            <div class="card-arrow">→</div>
+          </a>
+          <a class="card" href="#nz-content-tips">
+            <div class="card-icon">✦</div>
+            <div class="card-title">NZ-Specific Tips</div>
+            <div class="card-desc">What to prioritize, what TNZ asks you to avoid</div>
+            <div class="card-arrow">→</div>
+          </a>
+          <a class="card" href="#framing">
+            <div class="card-icon">🔲</div>
+            <div class="card-title">Framing</div>
+            <div class="card-desc">Rule of thirds, foreground, headroom</div>
+            <div class="card-arrow">→</div>
+          </a>
+          <a class="card" href="#movement">
+            <div class="card-icon">🎬</div>
+            <div class="card-title">Movement</div>
+            <div class="card-desc">Moves that work, moves to avoid</div>
+            <div class="card-arrow">→</div>
+          </a>
+          <a class="card" href="#audio">
+            <div class="card-icon">🎙</div>
+            <div class="card-title">Audio</div>
+            <div class="card-desc">Wind, ambient sound, and when it matters</div>
+            <div class="card-arrow">→</div>
+          </a>
+          <a class="card" href="#people">
+            <div class="card-icon">🧑‍🤝‍🧑</div>
+            <div class="card-title">People in Frame</div>
+            <div class="card-desc">TNZ asks for people — here's how to do it right</div>
+            <div class="card-arrow">→</div>
+          </a>
+          <a class="card" href="#uploading">
+            <div class="card-icon">⬆️</div>
+            <div class="card-title">Uploading to DT</div>
+            <div class="card-desc">Daily FileShare workflow and what to send</div>
+            <div class="card-arrow">→</div>
+          </a>
+          <a class="card" href="#checklist">
+            <div class="card-icon">✅</div>
+            <div class="card-title">Quick Checklist</div>
+            <div class="card-desc">Before you shoot, while you shoot, each evening</div>
+            <div class="card-arrow">→</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="grid-section">
+        <p class="grid-section-label">Jump to a Day</p>
+        <div class="card-grid days-grid">
+          <a class="card" href="#day1">
+            <div class="card-title">🛬 Day 1 — Tues June 23</div>
+            <div class="card-desc">Wellington. Foodie walking tour. QT Wellington check-in.</div>
+            <div class="card-arrow">→</div>
+          </a>
+          <a class="card" href="#day2">
+            <div class="card-title">🍷 Day 2 — Wed June 24</div>
+            <div class="card-desc">Day trip to Wairarapa wine country.</div>
+            <div class="card-arrow">→</div>
+          </a>
+          <a class="card" href="#day3">
+            <div class="card-title">🔥 Day 3 — Thurs June 25</div>
+            <div class="card-desc">Fly to Rotorua. Te Pā Tū evening. On the Point.</div>
+            <div class="card-arrow">→</div>
+          </a>
+          <a class="card" href="#day4">
+            <div class="card-title">♨️ Day 4 — Fri June 26</div>
+            <div class="card-desc">Wai Ariki spa. Te Puia geothermal park. Redwoods Treewalk.</div>
+            <div class="card-arrow">→</div>
+          </a>
+          <a class="card" href="#day5">
+            <div class="card-title">🏔 Day 5 — Sat June 27</div>
+            <div class="card-desc">Hawke's Bay. Arataki Honey. Art Deco Trust. Craggy Range.</div>
+            <div class="card-arrow">→</div>
+          </a>
+          <a class="card" href="#day6">
+            <div class="card-title">🛒 Day 6 — Sun June 28</div>
+            <div class="card-desc">HB Farmers Market. Craggy Range. Church Rd Legacy dinner.</div>
+            <div class="card-arrow">→</div>
+          </a>
+          <a class="card" href="#day7">
+            <div class="card-title">🌆 Day 7 — Mon June 29</div>
+            <div class="card-desc">Auckland. Lunch. Hotel Britomart. Dinner.</div>
+            <div class="card-arrow">→</div>
+          </a>
+          <a class="card" href="#day8">
+            <div class="card-title">⛴ Day 8 — Tues June 30</div>
+            <div class="card-desc">Waiheke Island. Ananda Tours. Ahi dinner.</div>
+            <div class="card-arrow">→</div>
+          </a>
+          <a class="card" href="#day9">
+            <div class="card-title">✈️ Day 9 — Wed July 1</div>
+            <div class="card-desc">Final morning. Depart Auckland.</div>
+            <div class="card-arrow">→</div>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /home-grid -->
+
+
+    <!-- ════════════════════════════════
+         OVERVIEW SECTIONS
+    ════════════════════════════════ -->
+
+    <!-- TNZ AMBASSADOR -->
+    <section class="content-section" id="ambassador">
+      <div class="section-header">
+        <p class="section-eyebrow">Overview</p>
+        <h2>TNZ Ambassador Program</h2>
+        <p class="section-intro">What this trip is, what it produces, and what Direct Travel needs from Eleanor on the ground.</p>
+      </div>
+      <div class="section-body">
+        <h3><span class="eh">🇳🇿</span> The Campaign</h3>
+        <p>Tourism New Zealand's MICHELIN Food and Beverage Trade hosted FAM — a 9-day North Island itinerary timed to celebrate the release of New Zealand's inaugural MICHELIN Guide. Eleanor is one of a small group of North American travel trade ambassadors. The content she produces serves both TNZ's channels and Direct Travel's broader marketing program.</p>
+
+        <h3><span class="eh">📋</span> What Eleanor Is Expected to Produce</h3>
+        <ul>
+          <li>At minimum 9 Instagram or Facebook posts across the trip — roughly one per day — posted to her own channels and to the TNZ Facebook community</li>
+          <li>3 photo albums or video reels/montages on Facebook or Instagram, each with a minimum of 8 photos, all tagged with the specific location</li>
+          <li>1 trip blog (minimum 200 words) or summary video (minimum 90 seconds) published after the trip</li>
+          <li>1 piece of consumer-facing content designed to drive bookings — video, social post, or e-newsletter inclusion</li>
+          <li>Content provided to Direct Travel daily for META and LinkedIn posting during and up to 2 weeks post-trip</li>
+          <li>Content shared to DT's Rallio platform for auto-syndication to advisor channels</li>
+        </ul>
+
+        <h3><span class="eh">📤</span> What Direct Travel Needs from Eleanor Daily</h3>
+        <ul>
+          <li>Non-personalized content sent to the DT Social Marketing team each day — photos and short clips that can stand alone without her narration</li>
+          <li>At least one usable vertical video clip per location that DT can use independently for Reels or Rallio</li>
+          <li>A brief daily note (one or two sentences) explaining what each piece of content shows — location, lighting, anything relevant for the team back home</li>
+        </ul>
+
+        <h3><span class="eh">🗺</span> The Bigger Picture</h3>
+        <p>The trip is structured around three destination clusters — Wellington, Rotorua, and Hawke's Bay/Auckland. Ideally, the three required photo albums or reels map to these three clusters. Plan for that from day one rather than trying to sort it out at the end.</p>
+
+        <div class="callout">TNZ's objective: Eleanor should come across as a travel professional sharing a genuine, first-person experience — not a content creator performing enthusiasm. The tone should be advisor-to-advisor. Real observations. Real recommendations. No overproduction.</div>
+        <a class="back-top" href="#top">↑ Back to top</a>
+      </div>
+    </section>
+
+    <!-- COMPLIANCE -->
+    <section class="content-section" id="compliance">
+      <div class="section-header">
+        <p class="section-eyebrow">Overview</p>
+        <h2>Compliance &amp; Hashtags</h2>
+        <p class="section-intro">Every post needs these. Non-negotiable per the signed agreement.</p>
+      </div>
+      <div class="section-body">
+        <h3><span class="eh">#️⃣</span> Required Hashtags</h3>
+        <p>All social media posts during the trip must include all four campaign hashtags and the TNZ tag. This applies to Instagram, Facebook, and any other platform.</p>
+
+        <div class="hashtag-block">
+          <span class="hashtag">#NZAmbassador</span>
+          <span class="hashtag">#NZMustDo</span>
+          <span class="hashtag">#NZBucketlist</span>
+          <span class="hashtag">#FEEL100inNZ</span>
+          <span class="hashtag">@purenewzealand</span>
+        </div>
+
+        <div class="note">DT's standard hashtag for travel content (#DTVacations) is separate from TNZ's required tags. Confirm with the marketing team whether to include it alongside the TNZ hashtags or reserve it for DT-specific posts.</div>
+
+        <h3><span class="eh">✅</span> Posting Obligations</h3>
+        <ul>
+          <li>Post to both your own personal channels and the TNZ Facebook community group</li>
+          <li>Tag the location specifically on all photo albums and reels — not just the country, but the specific venue or area</li>
+          <li>Daily non-personalized content to DT Social Marketing team for their own posting</li>
+          <li>Exclusivity: no promoting competitor destinations or travel brands during June 23–July 1</li>
+        </ul>
+
+        <h3><span class="eh">⚠️</span> Content Considerations (from TNZ)</h3>
+        <ul>
+          <li>No images of snow, icy roads, or cliff-edge road conditions — even if they occur. The campaign is positioning NZ as easy and accessible.</li>
+          <li>No heavy filtering or editing. TNZ's brand is built on authenticity. Light, natural colour grading only.</li>
+          <li>Avoid clichés: sheep, hobbit references, generic rolling hills without context. Lean into food, culture, and people.</li>
+          <li>Include people in imagery wherever possible — genuine moments of warmth, not staged poses</li>
+          <li>Drone footage requires advance approval from TNZ. Do not fly without written sign-off.</li>
+          <li>Keep driving and transport shots looking easy and relaxed — no white-knuckling, no narrow passes</li>
+        </ul>
+
+        <h3><span class="eh">🚫</span> What to Avoid Saying</h3>
+        <p>The contract's key messaging pillars give useful positive direction, but here's the flip side — language that will feel off-brand for this campaign:</p>
+        <ul>
+          <li>Avoid overselling or exclamation-mark energy. The vibe is peer recommendation, not tourism board ad copy.</li>
+          <li>Avoid describing New Zealand as remote, hard to get to, or requiring extensive planning. The whole point of this campaign is to reframe connectivity.</li>
+          <li>Avoid commentary on weather being cold or wet — frame winter as atmospheric, moody, cosy. June in NZ is winter; lean into that aesthetic rather than apologize for it.</li>
+        </ul>
+
+        <a class="back-top" href="#top">↑ Back to top</a>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════
+         THE BASICS
+    ════════════════════════════════ -->
+
+    <!-- CORE RULES -->
+    <section class="content-section" id="core-rules">
+      <div class="section-header">
+        <p class="section-eyebrow">The Basics</p>
+        <h2>Core Rules</h2>
+        <p class="section-intro">A few principles that apply to every clip, every location, every day. If you only read one section, make it this one.</p>
+      </div>
+      <div class="section-body">
+        <h3><span class="eh">📱</span> Shoot Vertical. Always.</h3>
+        <p>Reels, TikTok, and Instagram Stories are all 9:16 — portrait mode on your phone. Horizontal video is unusable on these platforms. When in doubt: phone upright, camera rolling.</p>
+        <div class="callout">This is the one rule that overrides everything else. Every other mistake is fixable in editing. This one isn't.</div>
+
+        <h3><span class="eh">🎬</span> One Clip, One Moment</h3>
+        <p>The strongest clips focus on a single idea, space, or view. Don't try to capture everything in one shot. A slow walk through a dining room is one clip. A geyser erupting is one clip. Keep them separate and let each one breathe.</p>
+
+        <h3><span class="eh">⏱</span> Clip Length</h3>
+        <p>Default is 30 to 60 seconds of continuous footage. Long clips give the editing team flexibility and often stand alone as a Reel without stitching anything together.</p>
+        <p>Shorter clips (10–15 seconds) are fine for specific details — food arriving, a carving detail, a pour — but they're the exception. When in doubt, keep rolling.</p>
+        <div class="callout">Hold every shot for at least 5–8 seconds before stopping or moving. A 2-second clip is almost unusable. Editors need handles on both ends.</div>
+
+        <h3><span class="eh">🐢</span> Slow Down</h3>
+        <p>Move at half your normal pace. Slow movement reads as intentional. Fast movement reads as nervous. If you're panning across a vineyard or walking through a forest, imagine you're carrying a full glass of water.</p>
+
+        <h3><span class="eh">📸</span> Think in Moving Photographs</h3>
+        <p>Most clips will have voiceover or music added in editing. Think of each clip as a moving photograph — a quiet visual the marketing team can narrate or set to music. Your job is to capture the moment cleanly. Their job is to make it sing.</p>
+        <a class="back-top" href="#top">↑ Back to top</a>
+      </div>
+    </section>
+
+    <!-- PHONE SETUP -->
+    <section class="content-section" id="phone-setup">
+      <div class="section-header">
+        <p class="section-eyebrow">The Basics</p>
+        <h2>Phone Setup</h2>
+        <p class="section-intro">Do this before you arrive at a location. Fumbling with settings mid-shoot costs you moments that don't repeat.</p>
+      </div>
+      <div class="section-body">
+        <h3><span class="eh">🎞</span> Resolution &amp; Frame Rate</h3>
+        <ul>
+          <li>Set resolution to 4K if available, 1080p minimum. Higher resolution gives editors room to crop, stabilize, and reframe without losing quality.</li>
+          <li>Shoot at 30fps for standard footage. Use 60fps for anything involving movement — waterfalls, geysers, activities, people walking. It looks smoother and gives editors a slow-motion option.</li>
+        </ul>
+
+        <h3><span class="eh">✋</span> Stabilization</h3>
+        <ul>
+          <li>Turn on your phone's built-in stabilization. On iPhone, look for Cinematic mode — it adds a subtle depth-of-field effect that looks polished on atmospheric clips.</li>
+          <li>If you're on a suspension bridge (Redwoods Treewalk), a boat (Waiheke ferry), or any moving surface — stabilization matters even more. Move slowly and deliberately.</li>
+        </ul>
+
+        <h3><span class="eh">💾</span> Storage</h3>
+        <ul>
+          <li>Clear space before you leave each morning. You will fill storage faster than expected — especially at Te Puia, Craggy Range, and Waiheke.</li>
+          <li>Back up to cloud or a portable drive each evening at the hotel. Do not arrive in Auckland with 8 days of footage on a single device.</li>
+        </ul>
+
+        <div class="checklist-block">
+          <p class="cb-title">Before Every Shoot</p>
+          <ul>
+            <li>Phone vertical (portrait mode)</li>
+            <li>Resolution set to 4K or 1080p</li>
+            <li>Stabilization on (Cinematic on iPhone if available)</li>
+            <li>Grid overlay on</li>
+            <li>Storage checked — at least 10GB free before a full day</li>
+          </ul>
+        </div>
+        <a class="back-top" href="#top">↑ Back to top</a>
+      </div>
+    </section>
+
+    <!-- FRAMING -->
+    <section class="content-section" id="framing">
+      <div class="section-header">
+        <p class="section-eyebrow">The Basics</p>
+        <h2>Framing &amp; Composition</h2>
+        <p class="section-intro">You don't need to be a photographer to frame a good shot. These principles apply to everything.</p>
+      </div>
+      <div class="section-body">
+        <h3><span class="eh">🔲</span> Rule of Thirds</h3>
+        <p>Imagine your screen divided into a 3×3 grid. Place your main subject — a vineyard, a geyser, a dish — along one of those grid lines rather than dead center. It looks more natural and gives the frame room to breathe.</p>
+        <div class="callout"><strong>Tip:</strong> Turn on the grid overlay in your camera settings. You'll immediately start framing better shots.</div>
+
+        <h3><span class="eh">🌿</span> Foreground Interest</h3>
+        <p>The best travel footage has something in the foreground — a wine glass on a vineyard terrace, fern fronds in the Redwood forest, a tasting plate — with the scene visible behind it. It creates depth and puts the viewer in the experience rather than observing it from outside.</p>
+
+        <h3>↕ Leave Headroom</h3>
+        <p>Don't crop off the tops of things. Leave space above subjects, buildings, trees, and landscapes. Tight crops that cut off mountain peaks or tree canopy give editors nothing to work with.</p>
+
+        <h3><span class="eh">⚓</span> Anchor the Viewer</h3>
+        <p>Abstract close-ups can be beautiful, but without context the viewer doesn't know where they are. Always pair a detail shot with at least one wider establishing shot that grounds them in the location.</p>
+        <a class="back-top" href="#top">↑ Back to top</a>
+      </div>
+    </section>
+
+    <!-- MOVEMENT -->
+    <section class="content-section" id="movement">
+      <div class="section-header">
+        <p class="section-eyebrow">The Basics</p>
+        <h2>Camera Movement</h2>
+        <p class="section-intro">When you move the camera, move with intention. When you hold still, hold completely still.</p>
+      </div>
+      <div class="section-body">
+        <h3><span class="eh">✅</span> Moves That Work</h3>
+        <ul>
+          <li>Slow pan — left to right or right to left across a scene, once, deliberately. Never back and forth.</li>
+          <li>Walking reveal — moving toward or around a subject so it gradually comes into frame</li>
+          <li>Tilt up — starting at ground level or a detail and slowly tilting up to reveal the full scene. Particularly effective in the Redwoods and at Te Mata Peak.</li>
+          <li>Static hold — plant your feet, lock your arms, and let the world move. A geyser erupting, a hāngi being served, wine being poured — none of these need the camera to move.</li>
+        </ul>
+
+        <h3><span class="eh">🚫</span> Moves to Avoid</h3>
+        <ul>
+          <li>Fast panning — it blurs on screen and loses all sense of place</li>
+          <li>Zooming while recording — push in physically or stay at one focal length</li>
+          <li>Jerky reframes mid-clip — if you want a different angle, stop, reframe, start again</li>
+          <li>Walking with the phone at arm's length while holding a conversation — it looks exactly like what it is</li>
+        </ul>
+        <a class="back-top" href="#top">↑ Back to top</a>
+      </div>
+    </section>
+
+    <!-- LIGHTING -->
+    <section class="content-section" id="lighting">
+      <div class="section-header">
+        <p class="section-eyebrow">The Basics</p>
+        <h2>Lighting</h2>
+        <p class="section-intro">Late June in New Zealand is mid-winter. Days are shorter, but the light is lower and softer — which is actually an advantage for outdoor content. Learn to use it.</p>
+      </div>
+      <div class="section-body">
+        <h3><span class="eh">☀️</span> Winter Light in NZ</h3>
+        <p>In June, sunrise in Wellington and Auckland is around 7:30am; sunset around 5:15pm. The sun stays low in the sky all day, producing soft, warm, directional light that flatters landscapes, architecture, and food. This is good. Most of your outdoor footage will naturally look better than it would in the middle of summer.</p>
+        <ul>
+          <li>Shoot outdoor landscapes and vineyard shots in the mid-morning or late afternoon — the low sun angle creates depth and warmth</li>
+          <li>The golden hour before sunset is particularly strong at Craggy Range and on Waiheke — plan outdoor shots before 4pm</li>
+          <li>Flat overcast light (common in Wellington) is ideal for market scenes, street food, and close-up food shots — it's even, shadow-free, and natural-looking</li>
+        </ul>
+
+        <h3><span class="eh">🕯</span> Indoor Lighting</h3>
+        <ul>
+          <li>Find the window. In any restaurant, hotel room, or cellar door, the window is your primary light source. Sit, stand, and shoot facing the light — not with your back to it.</li>
+          <li>Avoid mixing warm candle/ambient light with a cool window — choose one or the other as your dominant source</li>
+          <li>At Te Pā Tū, the fire and lanterns are the lighting — embrace the warmth rather than fighting it with exposure correction</li>
+          <li>Never use flash on food. Ever.</li>
+        </ul>
+
+        <h3><span class="eh">🌙</span> Low Light</h3>
+        <p>Evening events (Te Pā Tū, Craggy Range dinners, Ahi) are the hardest to shoot well. Stay close to candles, fires, and warm light sources. Accept that some clips will be too dark to use. One strong, warm, well-lit evening clip is worth more than ten underexposed ones.</p>
+        <a class="back-top" href="#top">↑ Back to top</a>
+      </div>
+    </section>
+
+    <!-- AUDIO -->
+    <section class="content-section" id="audio">
+      <div class="section-header">
+        <p class="section-eyebrow">The Basics</p>
+        <h2>Audio</h2>
+        <p class="section-intro">Most clips will be edited to music or voiceover — your original audio usually won't be in the final cut. But it still matters.</p>
+      </div>
+      <div class="section-body">
+        <ul>
+          <li>Note wind noise in your daily content note to DT. Wellington is famously windy — expect it and flag it when it affects audio.</li>
+          <li>If you're speaking to camera, find a quiet corner away from music, kitchens, and wind. Short, natural sentences only.</li>
+          <li>Geothermal sounds at Te Puia (bubbling mud, hissing steam) are worth capturing on their own — even a 20-second clip of just the sound environment is useful for editing.</li>
+          <li>The Te Pā Tū performance will have powerful live music and song — capture some of this atmosphere even if it's imperfect. The sound conveys energy that visuals alone cannot.</li>
+        </ul>
+        <div class="callout">If you're shooting something with genuinely great ambient audio — a hāngi ceremony, live Māori performance, a bustling market — flag it in your daily note even if the visual is imperfect. The audio alone may be usable.</div>
+        <a class="back-top" href="#top">↑ Back to top</a>
+      </div>
+    </section>
+
+    <!-- PEOPLE -->
+    <section class="content-section" id="people">
+      <div class="section-header">
+        <p class="section-eyebrow">The Basics</p>
+        <h2>People in Frame</h2>
+        <p class="section-intro">TNZ specifically asks for people in imagery wherever possible. Genuine moments of warmth and connection are the campaign's visual heart.</p>
+      </div>
+      <div class="section-body">
+        <ul>
+          <li>If someone is clearly the subject of a shot — a guide, a chef, a performer — ask before you film closely. Most hosts on this trip will expect content capture and will be happy to assist.</li>
+          <li>Group moments at dinner, cultural demonstrations, market scenes — shoot from a respectful distance as they unfold naturally. Don't direct or stage.</li>
+          <li>At Te Pā Tū, performers and guides are used to being filmed. Respect any venue-specific restrictions, but the experience is designed to be shared.</li>
+          <li>At Wai Ariki, the spa environment requires discretion. Do not film other guests. Focus on architecture, pools, and treatments where only Eleanor is visible.</li>
+          <li>Never film children in a way that makes them identifiable without explicit parental consent.</li>
+        </ul>
+        <div class="note">Including yourself in frame — walking into a view, sitting at a table, holding a glass against a vineyard — reads as personal and authentic, which is exactly what this campaign asks for. You don't need to speak. Simply being present in a beautiful environment is enough.</div>
+        <a class="back-top" href="#top">↑ Back to top</a>
+      </div>
+    </section>
+
+    <!-- UPLOADING -->
+    <section class="content-section" id="uploading">
+      <div class="section-header">
+        <p class="section-eyebrow">The Basics</p>
+        <h2>Sending Content to DT Daily</h2>
+        <p class="section-intro">The contract commits DT Social Marketing to posting daily during the trip. That depends on Eleanor sending content daily. Upload as soon as possible — ideally that evening from the hotel.</p>
+      </div>
+      <div class="section-body">
+        <p>The DT team will be posting independently to META and LinkedIn while Eleanor is on the ground. They need non-personalized clips and photos — content that doesn't require Eleanor's voice or caption to make sense.</p>
+        
+        <div class="primary-folder-block">
+          <p>📂 <strong>Primary folder</strong> — all day subfolders live here. Use this link to review the full upload history or access any day's folder directly.</p>
+          <a class="btn-folder" href="https://fileshare.dt.com/p/shares/lM5F3MFuV3qGmff" target="_blank">📂 Open Primary Folder</a>
+        </div><ol>
+          <li>Select 3–5 clips or photos from the day that stand alone as content</li>
+          <li>Upload to FileShare.dt.com — use the day-specific link in each day's section of this guide, or access the primary folder directly</li>
+          <li>Include a one-line note for each piece: what it shows, where it was shot, any lighting or audio issues</li>
+          <li>Flag your best single clip from the day — the one you'd post if you could only post one</li>
+        </ol>
+        <div class="callout"><strong>The daily note is the most important step.</strong> A clip with no context is a mystery. Two sentences is all it takes — "Thermal pools at Wai Ariki, late morning light, no other guests visible, very usable" gives the team everything they need.</div>
+        <div class="note">Note: TNZ does not cover mobile data costs in New Zealand. Eleanor is responsible for her own data plan. Ensure international roaming is set up before departure — content transfer depends on it.</div>
+        <a class="back-top" href="#top">↑ Back to top</a>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════
+         DAY BY DAY
+    ════════════════════════════════ -->
+
+    <!-- DAY 1 -->
+    <section class="content-section" id="day1">
+      <div class="section-header">
+        <p class="section-eyebrow">Day by Day</p>
+        <span class="day-emoji">🛬</span><h2>Day 1 — Tuesday June 23</h2>
+        <p class="section-intro">Arrive Wellington via Auckland. Walking foodie tour. Check in to QT Wellington.</p>
+      </div>
+      <div class="section-body">
+        <div class="day-meta">
+          <span class="day-meta-item">📍 Wellington</span>
+          <span class="day-meta-item">🏨 QT Wellington</span>
+          <span class="day-meta-item">✈️ Domestic flight day</span>
+        </div>
+        <div class="upload-block">
+          <div class="upload-block-label">
+            📁 Upload today's content
+            <span>Tuesday, June 23 — Wellington</span>
+          </div>
+          <a class="btn-upload" href="https://fileshare.dt.com/p/shares/8IOoAwnlrvX6QvQ" target="_blank">
+            <span class="btn-icon">⬆️</span> Upload Files — Day 1
+          </a>
+        </div>
+
+        <h3><span class="eh">✈️</span> Domestic Flight — Auckland to Wellington</h3>
+        <p>The AKL–WLG flight is short (45 minutes) but the approach into Wellington is one of the most dramatic of any domestic route — the plane descends steeply over Cook Strait and the city harbour. Worth having the phone ready.</p>
+        <ul>
+          <li>Window seat on the left side (east side) of the plane for harbour and city views on approach</li>
+          <li>A clean window shot looking down at the Marlborough Sounds or the Wellington Harbour is genuinely usable content — hold steady for 20–30 seconds</li>
+          <li>The moment of wheels-down and taxiing into a new city is a natural content beat that signals arrival and transitions between destinations</li>
+        </ul>
+
+        <h3><span class="eh">🍽</span> Wellington Foodie Walking Tour — Cuba Street &amp; Waterfront</h3>
+        <p>Wellington is a compact, walkable city with a food scene that punches well above its size — it's considered New Zealand's culinary capital. The walking tour covers Cuba Street, the waterfront, Willis Street, and Lambton Quay, with stops at local producers, a Māori waterfront eatery, a pizzeria, a chocolate maker, and one of the city's most awarded restaurants.</p>
+        <ul>
+          <li>Cuba Street's aesthetic is distinctive — eclectic storefronts, street art, laneway cafés, outdoor seating spilling onto pedestrian areas. Establish the energy of the street before focusing on food.</li>
+          <li>The waterfront offers the best wide shots. Film from the water's edge looking back at the city skyline — a slow pull back or wide establishing shot works well here.</li>
+          <li>Each food stop has a natural clip: the item being prepared or presented, a close pan across the food, and a wider shot showing the context of the space</li>
+          <li>Look for the moments between stops — two people walking, a market board, a chalk menu sign. These connective clips make a Reel feel alive rather than assembled.</li>
+          <li>Wellington is windy. Flag any wind noise in your daily upload note.</li>
+        </ul>
+        <div class="callout">Wellington's food scene — with its craft coffee, Māori waterfront food, and fine dining — maps directly to the MICHELIN Guide angle of this trip. The foodie tour is Day 1's content anchor and sets the tone for the whole story. Invest time here.</div>
+
+        <h3><span class="eh">🏨</span> QT Wellington — Check-In</h3>
+        <p>QT Wellington is a design hotel with a bold aesthetic — theatrical, art-forward, and very different from the natural-materials approach of Hotel Britomart and Craggy Range. The contrast is part of the story.</p>
+        <ul>
+          <li>Shoot the room immediately on arrival, before unpacking — beds, views, bathroom details</li>
+          <li>QT properties lean into dramatic lighting and bold design choices. Play into that rather than fighting it with naturalistic framing.</li>
+          <li>If the room has a view, shoot it at both blue hour (just after sunset, around 5:30pm in June) and from the window the following morning</li>
+        </ul>
+
+        <div class="checklist-block">
+          <p class="cb-title">Day 1 Content Targets</p>
+          <ul>
+            <li>Approach/arrival clip from the plane window</li>
+            <li>Wellington waterfront establishing shot</li>
+            <li>2–3 food clips from the walking tour (dish presentation, space atmosphere)</li>
+            <li>Cuba Street street-level clip — energy, not just architecture</li>
+            <li>QT Wellington room arrival shot (shoot before unpacking)</li>
+            <li>Day 1 social post: go live on Instagram/Facebook with #NZAmbassador and required tags</li>
+          </ul>
+        </div>
+        <a class="back-top" href="#top">↑ Back to top</a>
+      </div>
+    </section>
+
+    <!-- DAY 2 -->
+    <section class="content-section" id="day2">
+      <div class="section-header">
+        <p class="section-eyebrow">Day by Day</p>
+        <span class="day-emoji">🍷</span><h2>Day 2 — Wednesday June 24</h2>
+        <p class="section-intro">Day trip to Wairarapa wine country. Second night at QT Wellington.</p>
+      </div>
+      <div class="section-body">
+        <div class="day-meta">
+          <span class="day-meta-item">📍 Wairarapa</span>
+          <span class="day-meta-item">🏨 QT Wellington</span>
+          <span class="day-meta-item">🍷 Wine region day</span>
+        </div>
+        <div class="upload-block">
+          <div class="upload-block-label">
+            📁 Upload today's content
+            <span>Wednesday, June 24 — Wairarapa</span>
+          </div>
+          <a class="btn-upload" href="https://fileshare.dt.com/p/shares/yX8baJB0B8vnOsx" target="_blank">
+            <span class="btn-icon">⬆️</span> Upload Files — Day 2
+          </a>
+        </div>
+
+        <h3><span class="eh">🚗</span> The Drive Over the Rimutaka Range</h3>
+        <p>The drive from Wellington to the Wairarapa crosses the Rimutaka Range — a winding hill road that opens dramatically onto the plains below. This is exactly the kind of "easy access to something extraordinary" content TNZ is looking for.</p>
+        <ul>
+          <li>Shoot from the passenger window as the road descends onto the Wairarapa plains — the reveal is sudden and striking</li>
+          <li>Keep driving shots looking calm and manageable — no white-knuckling, no commentary about the road being difficult. Wide open views only.</li>
+          <li>The valley floor view from the hill descent is a natural wide shot — hold for at least 30 seconds if light permits</li>
+        </ul>
+
+        <h3><span class="eh">🍷</span> Wairarapa Wine Country</h3>
+        <p>Wairarapa — centred on the town of Martinborough — is known primarily for Pinot Noir, with a cluster of boutique producers within walking distance of each other. It's compact, unhurried, and very photogenic in winter light.</p>
+        <ul>
+          <li>Bare winter vines in rows create strong leading lines — shoot down a vine row at low angle with the winery or hills in the background</li>
+          <li>Cellar door tasting moments: wine poured into a glass, backlit against a window, held up against a vineyard view</li>
+          <li>Winemaker or cellar door staff in frame — with permission, a brief moment of a person at work (barrel cellar, tasting notes, pruning) tells the producer story</li>
+          <li>Winter in Wairarapa is misty and atmospheric in the mornings. If you arrive early, lean into the mist — low vines disappearing into fog reads as moody and beautiful, not cold or uninviting</li>
+        </ul>
+        <div class="callout">The Wairarapa is a short, accessible drive from Wellington — under an hour. This is exactly the kind of "new experience around every corner" message TNZ wants to reinforce. Showing the ease and proximity of the wine country is as important as the wine itself.</div>
+
+        <h3><span class="eh">🏘</span> Martinborough Village</h3>
+        <ul>
+          <li>The village square is classic small-town New Zealand — a useful wide shot to establish the character of the region</li>
+          <li>If visiting a café or restaurant for lunch, shoot the food against the window with any available natural light</li>
+        </ul>
+
+        <div class="checklist-block">
+          <p class="cb-title">Day 2 Content Targets</p>
+          <ul>
+            <li>Road/valley reveal shot crossing the Rimutaka Range</li>
+            <li>Vine-row leading-line shot (low angle, atmospheric)</li>
+            <li>Tasting moment — wine glass against vineyard or window light</li>
+            <li>Wide shot of the Wairarapa plains or village square</li>
+            <li>Day 2 social post with required hashtags</li>
+          </ul>
+        </div>
+        <a class="back-top" href="#top">↑ Back to top</a>
+      </div>
+    </section>
+
+    <!-- DAY 3 -->
+    <section class="content-section" id="day3">
+      <div class="section-header">
+        <p class="section-eyebrow">Day by Day</p>
+        <span class="day-emoji">🔥</span><h2>Day 3 — Thursday June 25</h2>
+        <p class="section-intro">Fly Wellington to Rotorua. Join the AU group. Evening at Te Pā Tū. Check in to On the Point.</p>
+      </div>
+      <div class="section-body">
+        <div class="day-meta">
+          <span class="day-meta-item">📍 Rotorua</span>
+          <span class="day-meta-item">🏨 On the Point</span>
+          <span class="day-meta-item">🌿 Māori cultural evening</span>
+        </div>
+        <div class="upload-block">
+          <div class="upload-block-label">
+            📁 Upload today's content
+            <span>Thursday, June 25 — Rotorua / Te Pā Tū</span>
+          </div>
+          <a class="btn-upload" href="https://fileshare.dt.com/p/shares/LQIbMqPVGeFu6BR" target="_blank">
+            <span class="btn-icon">⬆️</span> Upload Files — Day 3
+          </a>
+        </div>
+
+        <h3><span class="eh">✈️</span> WLG to ROT Flight</h3>
+        <ul>
+          <li>The approach into Rotorua often passes over Lake Rotorua — the lake is immediately recognisable as geothermal steam rises from the shores. Shoot from the window if you get a clear approach.</li>
+          <li>Rotorua from the air has a unique character — you can often see the steam even before landing</li>
+        </ul>
+
+        <h3><span class="eh">🔥</span> Te Pā Tū — Māori Cultural Evening</h3>
+        <p>Te Pā Tū (formerly Tamaki Māori Village) is a multi-hour immersive experience — bus transfer from the gathering place in town, a pōwhiri (welcome ceremony), live cultural performances, interactive demonstrations, and a 3-course fusion hākari (feast) in the forest. For the June timing, this is the Matariki (Māori New Year) version — Tū Te Ihi — which incorporates the Matariki star cluster and seasonal ceremony.</p>
+
+        <p>This is one of the most visually and emotionally rich experiences on the entire itinerary. Invest real attention in capturing it.</p>
+
+        <ul>
+          <li>The approach through the tawa forest with lanterns — the walk from the bus to the village is lit by firelight and lanterns. Keep your phone steady and hold a long, slow clip of this arrival moment.</li>
+          <li>The Ahi Taitai (fire ceremony) at the start — fire is your primary light source. Don't fight it. Warm, firelit footage is atmospheric and authentic.</li>
+          <li>Performances in the forest amphitheater — shoot from the edges rather than standing up mid-performance. Wide shot of the full performance space first, then closer clips of individual moments.</li>
+          <li>The hākari (feast) — shoot dishes before the table is disturbed, a wide shot of the outdoor dining setup under the trees, and any food plating or service moments you catch as they happen</li>
+          <li>People in frame are essential here — performers, guides, fellow diners responding to the experience. The emotion is the content.</li>
+        </ul>
+        <div class="callout">Te Pā Tū directly embodies the TNZ key message of manaakitanga — the deep Māori expression of hospitality. This experience is about people and connection, not scenery. Shoot it accordingly.</div>
+        <div class="note">The experience takes place largely outdoors at night. Low-light footage is harder to get right. Stay as close to fire, bonfire, and lantern light as you can. Flag any unusably dark clips in your daily upload note rather than trying to correct them in-camera.</div>
+
+        <h3><span class="eh">🏨</span> On the Point — Arrival</h3>
+        <ul>
+          <li>Check in and shoot the room before unpacking</li>
+          <li>On the Point sits on the shores of Lake Rotorua. If there's a lake view from your room or a common area, that's a morning-light shot for tomorrow — take note of the best vantage point tonight so you're ready early.</li>
+        </ul>
+
+        <div class="checklist-block">
+          <p class="cb-title">Day 3 Content Targets</p>
+          <ul>
+            <li>Plane window — Lake Rotorua or steam approach (if visible)</li>
+            <li>Te Pā Tū forest lantern arrival walk</li>
+            <li>Fire ceremony or bonfire clip — warm, atmospheric, 30+ seconds</li>
+            <li>Wide shot of performance space with performers in frame</li>
+            <li>Hākari feast table shot — before anyone touches the food</li>
+            <li>Day 3 social post with required hashtags</li>
+          </ul>
+        </div>
+        <a class="back-top" href="#top">↑ Back to top</a>
+      </div>
+    </section>
+
+    <!-- DAY 4 -->
+    <section class="content-section" id="day4">
+      <div class="section-header">
+        <p class="section-eyebrow">Day by Day</p>
+        <span class="day-emoji">♨️</span><h2>Day 4 — Friday June 26</h2>
+        <p class="section-intro">Wai Ariki Hot Springs &amp; Spa. Te Puia geothermal park. Redwoods Treewalk.</p>
+      </div>
+      <div class="section-body">
+        <div class="day-meta">
+          <span class="day-meta-item">📍 Rotorua</span>
+          <span class="day-meta-item">🏨 On the Point</span>
+          <span class="day-meta-item">🌋 Geothermal &amp; forest day</span>
+        </div>
+        <div class="upload-block">
+          <div class="upload-block-label">
+            📁 Upload today's content
+            <span>Friday, June 26 — Wai Ariki, Te Puia &amp; Redwoods</span>
+          </div>
+          <a class="btn-upload" href="https://fileshare.dt.com/p/shares/pYKpSHrdqzjOsJV" target="_blank">
+            <span class="btn-icon">⬆️</span> Upload Files — Day 4
+          </a>
+        </div>
+
+        <h3><span class="eh">🌅</span> Morning — Lake Rotorua</h3>
+        <ul>
+          <li>Before leaving On the Point, shoot the lake view in the early morning — steam rising off the water in winter is one of the defining images of Rotorua and rarely requires any effort to find. Just open the window.</li>
+          <li>Mokoia Island sits in the middle of the lake and provides natural framing. Shoot the island from the shore with steam in the foreground if visible.</li>
+        </ul>
+
+        <h3><span class="eh">♨️</span> Wai Ariki Hot Springs &amp; Spa</h3>
+        <p>New Zealand's only luxury Māori cultural spa, owned by Ngāti Whakaue, located on the foreshore of Lake Rotorua. The Restorative Journey is a 2-hour, 7-step experience — geothermal pools, steam rooms, mud therapy, cold plunge, and a blessing stone — guided by Māori cultural commentary throughout. The architecture is striking and contemporary.</p>
+        <ul>
+          <li>The thermal pools overlook Lake Rotorua — a pool shot with the lake behind is the signature visual of this experience. Frame the water in the foreground, the lake in the background, and hold steady.</li>
+          <li>Steam rising from the pools in cool winter air is a natural visual gift — let it drift through frame</li>
+          <li>The architecture: shoot the building exterior on arrival, and any distinctive interior spaces (the mud room, the changing suite, the blessing stone area) that are architecturally interesting</li>
+          <li>Do NOT film other guests in the pools — this is a clear privacy expectation. Focus on architecture, atmosphere, and Eleanor alone (from behind or at a distance is fine).</li>
+          <li>The karakia (prayer) that opens and closes the experience is a meaningful cultural moment — do not film it. Be present for it.</li>
+        </ul>
+        <div class="callout">Wai Ariki directly maps to the TNZ messaging pillar of tiakitanga (guardianship and connection to land). This is geothermal healing rooted in centuries of Māori tradition. The visual language should feel unhurried, spiritual, and warm — not gym-spa clinical.</div>
+
+        <h3><span class="eh">🌋</span> Te Puia</h3>
+        <p>Te Puia is the home of Pōhutu Geyser — New Zealand's largest active geyser — plus bubbling mud pools, silica terraces, a kiwi house, and a working Māori arts and crafts institute (New Zealand Māori Arts and Crafts Institute, NZMACI).</p>
+        <ul>
+          <li>Pōhutu Geyser erupts frequently (every 1–2 hours, sometimes more often) and reaches up to 30 metres. Position yourself with the geyser against the sky rather than against other structures. Wait for an eruption — this is the shot worth waiting for.</li>
+          <li>Hold the geyser clip for the full duration of an eruption — at least 60 seconds. Stopping before it finishes misses the peak.</li>
+          <li>The mud pools bubble constantly — a close, slow pan across the surface is genuinely mesmerizing and rarely films badly. Include the steam in frame.</li>
+          <li>Silica terraces are a distinctive pale-white landscape feature. Shoot with low winter sun to emphasize the texture.</li>
+          <li>The carving school: with permission, a craftsperson at work is compelling cultural content. Ask before filming closely.</li>
+          <li>The kiwi house is dark and requires red-spectrum lighting. Phone cameras struggle here — take a short clip but don't invest heavily in it.</li>
+        </ul>
+        <div class="note">TNZ asks that content avoids making NZ look hard to get around. Te Puia is large and walkable — frame it as approachable and close-at-hand, not vast and overwhelming.</div>
+
+        <h3><span class="eh">🌲</span> Redwoods Treewalk</h3>
+        <p>A 700-metre suspension bridge walkway threading between 27 giant 120-year-old Redwood trees, 9–20 metres off the forest floor. 28 bridges, 40 minutes. One of the most distinctive non-geothermal experiences in Rotorua.</p>
+        <ul>
+          <li>Look up. The most distinctive visual of the Redwoods is the perspective from below — massive trunks rising out of frame, canopy above. This works better vertical than any other orientation.</li>
+          <li>Shoot along a bridge toward the next platform — the lines of the bridge, the tree trunks framing either side, and the depth of the forest behind is a strong composed shot</li>
+          <li>The scale of the trees is difficult to convey without a person in frame for reference — stand Eleanor in the foreground of a wide shot to establish just how large these trees are</li>
+          <li>Silver ferns on the forest floor, visible from the walkway looking down — a close shot of a single fern with depth of forest behind it is a classic NZ image that works here without feeling clichéd</li>
+          <li>The bridges move gently when you walk on them. Keep the camera stable and move deliberately — at this height, even subtle shakiness reads badly on screen.</li>
+        </ul>
+
+        <div class="checklist-block">
+          <p class="cb-title">Day 4 Content Targets</p>
+          <ul>
+            <li>Lake Rotorua morning — steam on water</li>
+            <li>Wai Ariki pools with lake in background</li>
+            <li>Wai Ariki architecture/exterior</li>
+            <li>Pōhutu Geyser full eruption — minimum 60 seconds</li>
+            <li>Mud pool close pan</li>
+            <li>Redwoods — looking up into canopy</li>
+            <li>Redwoods — bridge perspective shot with forest depth</li>
+            <li>Day 4 social post with required hashtags</li>
+          </ul>
+        </div>
+        <a class="back-top" href="#top">↑ Back to top</a>
+      </div>
+    </section>
+
+    <!-- DAY 5 -->
+    <section class="content-section" id="day5">
+      <div class="section-header">
+        <p class="section-eyebrow">Day by Day</p>
+        <span class="day-emoji">🏔</span><h2>Day 5 — Saturday June 27</h2>
+        <p class="section-intro">Transfer to Hawke's Bay. Arataki Honey. Art Deco Trust / Napier. Dinner and check-in at Craggy Range.</p>
+      </div>
+      <div class="section-body">
+        <div class="day-meta">
+          <span class="day-meta-item">📍 Hawke's Bay</span>
+          <span class="day-meta-item">🏨 Craggy Range</span>
+          <span class="day-meta-item">🍯 Food, architecture &amp; wine</span>
+        </div>
+        <div class="upload-block">
+          <div class="upload-block-label">
+            📁 Upload today's content
+            <span>Saturday, June 27 — Hawke's Bay (Arrive)</span>
+          </div>
+          <a class="btn-upload" href="https://fileshare.dt.com/p/shares/oKW4qz8lxMTUnQb" target="_blank">
+            <span class="btn-icon">⬆️</span> Upload Files — Day 5
+          </a>
+        </div>
+
+        <h3><span class="eh">🚗</span> Transfer — Rotorua to Hawke's Bay</h3>
+        <p>The drive from Rotorua to Hawke's Bay crosses the central North Island — around 3 hours through farmland and hill country. The arrival into Hawke's Bay, as the road descends toward the Heretaunga Plains with Te Mata Peak visible ahead, is a strong content moment.</p>
+        <ul>
+          <li>The descent into Hawke's Bay with the peak in view is worth capturing from the passenger window — hold for a long, wide shot rather than a quick glance</li>
+          <li>The shift from volcanic Rotorua to the orderly vineyard plains of Hawke's Bay is a visual contrast worth noting in your Day 5 post</li>
+        </ul>
+
+        <h3><span class="eh">🍯</span> Arataki Honey</h3>
+        <p>Arataki is one of New Zealand's most recognised honey producers, with a large visitor centre in Havelock North. The attraction is partly the products and partly the surrounding hive displays and native planting.</p>
+        <ul>
+          <li>The honeycomb and amber jars are visually distinctive — backlit against window light they glow. Spend time on the product close-up before shooting the broader space.</li>
+          <li>If there's a live hive display, the bees-in-glass shot is compelling — steady and close, let the activity fill the frame</li>
+          <li>A tasting moment — honey on a spoon, a natural reaction — is a simple, shareable clip for social</li>
+          <li>The exterior of the building and surrounding gardens are worth an establishing shot in the Hawke's Bay winter light</li>
+        </ul>
+
+        <h3><span class="eh">🏛</span> Art Deco Trust / Napier</h3>
+        <p>Napier was rebuilt almost entirely in Art Deco style following the 1931 earthquake and is considered one of the world's best-preserved Art Deco cities. The Marine Parade, Emerson Street, and the surrounding blocks are the core of the district.</p>
+        <ul>
+          <li>Look up. Art Deco architecture is all about the facades — detailed friezes, geometric ornamentation, sunburst motifs. A tilt-up shot from street level to the top of a building captures the style better than a wide street shot.</li>
+          <li>The geometric patterns and bold typography on building facades are striking close-up — a slow pan across a single facade is stronger than a wide shot trying to capture everything</li>
+          <li>Morning or late afternoon light catches the bas-relief ornamentation on the buildings — if timing allows, late afternoon light (around 3:30–4pm) on the east-facing facades is ideal</li>
+          <li>The Marine Parade gives a longer view — the row of buildings against the sky is a good wide establishing shot</li>
+        </ul>
+
+        <h3><span class="eh">🍷</span> Craggy Range — Arrival &amp; Dinner</h3>
+        <p>Craggy Range is the standout property of the trip — a world-ranked winery estate nestled beneath the dramatic Te Mata Peak escarpment, with award-winning architecture, organic kitchen gardens, sculptural installations, and boutique accommodation set among the vines. The River Lodges have terraces overlooking the Tuki Tuki River.</p>
+        <ul>
+          <li>Shoot the room before unpacking — the Craggy Range accommodation is distinctive and designed for photography</li>
+          <li>The terrace looking toward the Tuki Tuki River and Te Mata Peak is the signature exterior shot — shoot this at the golden hour before dinner (around 4:30–5pm in June)</li>
+          <li>The vineyard rows with Te Mata Peak behind are Craggy Range's defining visual. Low, wide, and still — let the peak fill the top third of the frame.</li>
+          <li>The restaurant interior: shoot the dining space before guests arrive if possible — tables set, candles lit, kitchen garden views through the windows</li>
+          <li>Wine being poured at the table — a slow pour, backlit if possible, glass on the table with vine rows visible through the window behind it</li>
+          <li>The organic kitchen garden adjacent to the restaurant is worth capturing — a row of winter vegetables with the winery building behind it is understated but rich</li>
+        </ul>
+        <div class="callout">Craggy Range is a World's Best Vineyard-ranked estate. It photographs like one. This location, along with Waiheke, will produce the most shareable and sellable content of the trip. Take your time here.</div>
+
+        <div class="checklist-block">
+          <p class="cb-title">Day 5 Content Targets</p>
+          <ul>
+            <li>Arrival into Hawke's Bay — Te Mata Peak from the road</li>
+            <li>Arataki honey product close-up (backlit amber)</li>
+            <li>Art Deco facade tilt-up shot</li>
+            <li>Craggy Range estate — vineyard row with Te Mata Peak</li>
+            <li>Craggy Range room shot (before unpacking)</li>
+            <li>Dinner: food before anyone touches it, wide restaurant shot</li>
+            <li>Day 5 social post with required hashtags</li>
+          </ul>
+        </div>
+        <a class="back-top" href="#top">↑ Back to top</a>
+      </div>
+    </section>
+
+    <!-- DAY 6 -->
+    <section class="content-section" id="day6">
+      <div class="section-header">
+        <p class="section-eyebrow">Day by Day</p>
+        <span class="day-emoji">🛒</span><h2>Day 6 — Sunday June 28</h2>
+        <p class="section-intro">Hawke's Bay Farmers Market. Full day at Craggy Range. Dinner at Church Road Legacy.</p>
+      </div>
+      <div class="section-body">
+        <div class="day-meta">
+          <span class="day-meta-item">📍 Hawke's Bay</span>
+          <span class="day-meta-item">🏨 Craggy Range</span>
+          <span class="day-meta-item">🛒 Market &amp; fine dining day</span>
+        </div>
+        <div class="upload-block">
+          <div class="upload-block-label">
+            📁 Upload today's content
+            <span>Sunday, June 28 — Hawke's Bay (Full Day)</span>
+          </div>
+          <a class="btn-upload" href="https://fileshare.dt.com/p/shares/Sd1KOsK7IlpOhu6" target="_blank">
+            <span class="btn-icon">⬆️</span> Upload Files — Day 6
+          </a>
+        </div>
+
+        <h3><span class="eh">🛒</span> Hawke's Bay Farmers Market</h3>
+        <p>The Hawke's Bay Farmers Market runs Sunday mornings at the A&amp;P Showgrounds in Hastings — one of the oldest and most celebrated markets in New Zealand. The region is New Zealand's largest horticultural area and the market reflects it: stone fruit, heritage vegetables, artisan cheeses, wine, and a working café culture.</p>
+        <ul>
+          <li>Arrive early. Markets in winter light are better when they're full but not shoulder-to-shoulder — 8–9am is ideal. The light is low and warm and the stalls are at their best before things get picked over.</li>
+          <li>Produce arrangements at a market stall are natural still-life photography — a slow tilt up from the table to the vendor's face (with permission) is a simple, effective clip</li>
+          <li>Colour contrast: the market will have orange pumpkins, purple cabbage, bright green herbs against earthy wooden crates. These details film beautifully in winter light.</li>
+          <li>Vendors at work — a cheese being cut, a loaf being wrapped, a coffee being pulled — are natural moments that don't require staging</li>
+          <li>The scale of the market: a single slow pull back from a detail to reveal the full stall, then the row of stalls, gives editors a useful sequence</li>
+        </ul>
+        <div class="callout">The market embodies tiakitanga (guardianship of the land) and pure, vibrant flavours — two of the four TNZ key messaging pillars. This is directly on-brief. Treat it as a content priority, not a warm-up.</div>
+
+        <h3><span class="eh">🌄</span> Craggy Range — Morning</h3>
+        <p>This is the full daylight opportunity to capture the Craggy Range estate. Morning mist off the Tuki Tuki River, the kitchen gardens in daylight, and the full scale of the vineyard with Te Mata Peak are all best captured before noon.</p>
+        <ul>
+          <li>Morning mist in the Tuki Tuki River valley, if present, is one of the most atmospheric shots available on the trip. Set an alarm.</li>
+          <li>The underground cellar during a tour: low-light, barrel rows, the geometry of a working wine cellar. Move slowly and let eyes adjust before starting to film.</li>
+          <li>The circular Sophia fermentation cellar is architecturally unique — a wide shot from the entrance showing the circular form and the 8,000-litre French oak cuvées inside is a strong interior image</li>
+          <li>A tasting: glass against window, vineyard in the background. Simple, repeatable, effective.</li>
+          <li>The sculptural installations in the grounds — walk slowly past them with the estate visible behind, let them pass through frame naturally</li>
+        </ul>
+
+        <h3><span class="eh">🍽</span> Church Road Legacy — Dinner</h3>
+        <p>Church Road is one of New Zealand's most historic wineries, established in 1897. Church Road Legacy is its premium dining and tasting experience in Napier.</p>
+        <ul>
+          <li>The heritage winery setting will have architectural character worth establishing before dinner begins</li>
+          <li>Food first — shoot each course before it's touched</li>
+          <li>A slow pan across the dining table showing the full setting — glassware, candles, plates — is a single clip that gives editors multiple options</li>
+          <li>The wine pairing story: a bottle, a pour, a glass held up to candlelight. This is the visual language of fine dining.</li>
+        </ul>
+
+        <div class="checklist-block">
+          <p class="cb-title">Day 6 Content Targets</p>
+          <ul>
+            <li>Market: producer close-up (vendor + product in frame)</li>
+            <li>Market: colour detail shot (produce arrangement)</li>
+            <li>Craggy Range morning — river mist or vineyard in daylight</li>
+            <li>Craggy Range cellar tour — barrel rows or Sophia cellar</li>
+            <li>Church Road Legacy: dining room establishing shot</li>
+            <li>Church Road Legacy: food before anyone touches it</li>
+            <li>Day 6 social post with required hashtags</li>
+          </ul>
+        </div>
+        <a class="back-top" href="#top">↑ Back to top</a>
+      </div>
+    </section>
+
+    <!-- DAY 7 -->
+    <section class="content-section" id="day7">
+      <div class="section-header">
+        <p class="section-eyebrow">Day by Day</p>
+        <span class="day-emoji">🌆</span><h2>Day 7 — Monday June 29</h2>
+        <p class="section-intro">Transfer to Auckland. Lunch at Velskov or Big Foodie. Dinner at Return or Kingi. Check in to Hotel Britomart.</p>
+      </div>
+      <div class="section-body">
+        <div class="day-meta">
+          <span class="day-meta-item">📍 Auckland</span>
+          <span class="day-meta-item">🏨 Hotel Britomart</span>
+          <span class="day-meta-item">🍽️ MICHELIN dining day</span>
+        </div>
+        <div class="upload-block">
+          <div class="upload-block-label">
+            📁 Upload today's content
+            <span>Monday, June 29 — Auckland (Arrive)</span>
+          </div>
+          <a class="btn-upload" href="https://fileshare.dt.com/p/shares/jPfaIRO1JOLyyPN" target="_blank">
+            <span class="btn-icon">⬆️</span> Upload Files — Day 7
+          </a>
+        </div>
+
+        <h3><span class="eh">🏨</span> Hotel Britomart — Arrival</h3>
+        <p>New Zealand's first 5 Green Star hotel, built from handmade brick in the Britomart heritage precinct. The design is deliberate and understated — timber-lined rooms, hand-made ceramics by local artisans, built-in sofas, organic cotton sheets, and a Waitematā Harbour view from the upper rooms. Every material choice in the building has a sustainability story.</p>
+        <ul>
+          <li>The exterior handmade brick facade is distinctive — shoot from the street outside, stepping back to show the building in context of the Britomart laneway</li>
+          <li>Room: shoot immediately on arrival — the timber walls, the built-in sofa, the ceramic details. Open the curtains wide before shooting.</li>
+          <li>If you have a Waitematā View room, the harbour view with the ferry terminal and water in frame is worth a sunset clip tonight (around 5:15pm)</li>
+          <li>The hotel's Libraries — guest lounge and library spaces — are worth a quick clip if open and accessible. Dark timber, curated books, understated warmth.</li>
+        </ul>
+
+        <h3><span class="eh">🏙</span> Britomart Neighbourhood</h3>
+        <p>Britomart is nine blocks of restored heritage warehouses housing Auckland's best restaurants, bars, and boutiques. It's compact, walkable, and visually distinctive — exposed brick, laneway planting, outdoor tables.</p>
+        <ul>
+          <li>The laneways between buildings — plants overhead, stone underfoot, café light spilling out — film as a slow walking clip. This is a strong B-roll moment for any Auckland content.</li>
+          <li>The Takutai Square public space in front of the hotel is a useful wide establishing shot if the afternoon light catches it</li>
+        </ul>
+
+        <h3><span class="eh">🍴</span> Lunch (Velskov or Big Foodie)</h3>
+        <ul>
+          <li>Both are fine-dining contexts in the MICHELIN Guide frame. Shoot the room establishing shot before sitting, then food before it's touched.</li>
+          <li>Any food presentation with genuine craft or plating artistry — shoot overhead (flat lay) first, then a low-angle close shot</li>
+        </ul>
+
+        <h3><span class="eh">🐟</span> Dinner (Return or Kingi)</h3>
+        <p>Kingi is the seafood restaurant located at Hotel Britomart — sustainably sourced, with a strong local identity. Return is a fine dining experience. Both are excellent visual subjects.</p>
+        <ul>
+          <li>Seafood at Kingi: freshness and simplicity are the visual story — clean plating, natural light if available, minimal clutter in frame</li>
+          <li>The dining room at whichever restaurant — shoot the full space from the entrance before being seated. An empty or quiet dining room before peak service is often the most compelling shot.</li>
+          <li>Wine pairing: a pour, a swirl, a glass held against the light. The ritual of fine dining is content.</li>
+        </ul>
+        <div class="callout">Auckland dining is directly tied to the MICHELIN Guide launch — the whole reason this trip exists. The content from tonight is potentially the most on-message of the whole trip. Take the time to capture the spaces and the food properly.</div>
+
+        <div class="checklist-block">
+          <p class="cb-title">Day 7 Content Targets</p>
+          <ul>
+            <li>Hotel Britomart exterior and room arrival shot</li>
+            <li>Britomart laneway walking clip</li>
+            <li>Harbour view from room or hotel surroundings (golden hour)</li>
+            <li>Lunch: food + dining room establishing shot</li>
+            <li>Dinner: food before touched + restaurant atmosphere</li>
+            <li>Day 7 social post with required hashtags</li>
+          </ul>
+        </div>
+        <a class="back-top" href="#top">↑ Back to top</a>
+      </div>
+    </section>
+
+    <!-- DAY 8 -->
+    <section class="content-section" id="day8">
+      <div class="section-header">
+        <p class="section-eyebrow">Day by Day</p>
+        <span class="day-emoji">⛴</span><h2>Day 8 — Tuesday June 30</h2>
+        <p class="section-intro">Waiheke Island via ferry. Full day with Ananda Tours. Dinner at Ahi, Auckland.</p>
+      </div>
+      <div class="section-body">
+        <div class="day-meta">
+          <span class="day-meta-item">📍 Waiheke Island</span>
+          <span class="day-meta-item">🏨 Hotel Britomart</span>
+          <span class="day-meta-item">⛴️ Island wine day</span>
+        </div>
+        <div class="upload-block">
+          <div class="upload-block-label">
+            📁 Upload today's content
+            <span>Tuesday, June 30 — Waiheke Island</span>
+          </div>
+          <a class="btn-upload" href="https://fileshare.dt.com/p/shares/ycuCRZFst0AD15c" target="_blank">
+            <span class="btn-icon">⬆️</span> Upload Files — Day 8
+          </a>
+        </div>
+
+        <h3><span class="eh">⛴</span> The Ferry — Auckland to Waiheke</h3>
+        <p>The Waiheke ferry from the Auckland Ferry Terminal is a 40-minute crossing. The departure from the downtown waterfront, with the city skyline behind and the Hauraki Gulf ahead, is one of the strongest establishing shots for any Auckland-based content.</p>
+        <ul>
+          <li>Film the departure: the city skyline receding as the ferry moves away from the terminal. A long, held shot from the back of the ferry as Auckland shrinks is a clean, usable clip.</li>
+          <li>From the front of the ferry, Waiheke Island approaches — the island coming into view on the horizon, then the Matiatia wharf arrival, is an "easy to get there" content moment</li>
+          <li>On the water: the Waitematā Harbour and Hauraki Gulf are stunning in winter. If the sky is clear, the water will be deep blue and the islands visible. Hold wide shots from the deck.</li>
+        </ul>
+        <div class="callout">This ferry crossing is the strongest piece of connectivity content on the whole trip. 40 minutes from downtown Auckland to world-class wine country. Film it like you mean it.</div>
+
+        <h3><span class="eh">🍇</span> Ananda Tours — Waiheke Island</h3>
+        <p>Ananda Tours is a family-owned Waiheke operator with 27+ years of experience. The tour includes visits to three or more boutique vineyards, scenic island driving with local commentary, and access to producers, artists, and experiences that independent travellers rarely find.</p>
+        <ul>
+          <li>The approach to each vineyard by van — turn in off a country road, a wooden gate, a vine-lined driveway. Each arrival is a micro-moment worth capturing.</li>
+          <li>Waiheke has strong cliff-top scenery above the vineyards — if the tour passes any viewpoints over the ocean and the mainland, these are among the most distinctive and shareable shots of the whole trip</li>
+          <li>Tasting rooms: a glass of wine held against the vineyard through a large window. Waiheke cellar doors tend to have generous views. Use them.</li>
+          <li>Your guide is a long-time island resident with insider knowledge — a brief, genuine moment of them pointing something out or sharing a story (with their consent) is exactly the peer-to-peer advisor content TNZ is asking for</li>
+          <li>The olive oil tasting or artisan food moments, if included — treat these the same as any other food content: camera eats first, slow pan, natural reaction</li>
+          <li>Vineyards in winter: the vines are bare but the island is green. Shoot down a vine row toward the ocean if the views align — it's a distinctive NZ image.</li>
+        </ul>
+
+        <h3><span class="eh">🌟</span> Ahi — Dinner, Auckland</h3>
+        <p>Ahi is one of Auckland's premier fine dining restaurants, known for its emphasis on New Zealand-grown and foraged ingredients interpreted through a contemporary lens. It frequently appears in NZ's best restaurant rankings.</p>
+        <ul>
+          <li>The food at Ahi is designed to be beautiful — close-up, overhead, flat-lay. The plating will do the work for you. Shoot before the table is disturbed.</li>
+          <li>The restaurant space: a wide, slow clip from the entrance capturing the dining room atmosphere before service is at full pace</li>
+          <li>A finish to the trip's food story: nine days of exceptional New Zealand food and wine, ending at one of Auckland's best. The final dinner is an editorial conclusion — frame it that way in your caption.</li>
+        </ul>
+
+        <div class="checklist-block">
+          <p class="cb-title">Day 8 Content Targets</p>
+          <ul>
+            <li>Ferry departure — Auckland skyline receding</li>
+            <li>Waiheke arrival — island and wharf from the water</li>
+            <li>Vineyard with ocean views — wide shot, wine country meets sea</li>
+            <li>Tasting moment — glass against cellar door window or vineyard backdrop</li>
+            <li>Ahi — dining room establishing shot</li>
+            <li>Ahi — food before it's touched (at least one course)</li>
+            <li>Day 8 social post with required hashtags</li>
+          </ul>
+        </div>
+        <a class="back-top" href="#top">↑ Back to top</a>
+      </div>
+    </section>
+
+    <!-- DAY 9 -->
+    <section class="content-section" id="day9">
+      <div class="section-header">
+        <p class="section-eyebrow">Day by Day</p>
+        <span class="day-emoji">✈️</span><h2>Day 9 — Wednesday July 1</h2>
+        <p class="section-intro">Final morning in Auckland. Depart.</p>
+      </div>
+      <div class="section-body">
+        <div class="day-meta">
+          <span class="day-meta-item">📍 Auckland</span>
+          <span class="day-meta-item">✈️ Departure day</span>
+        </div>
+        <div class="upload-block">
+          <div class="upload-block-label">
+            📁 Upload today's content
+            <span>Wednesday, July 1 — Depart Auckland</span>
+          </div>
+          <a class="btn-upload" href="https://fileshare.dt.com/p/shares/7E6p5VnY3E55mZL" target="_blank">
+            <span class="btn-icon">⬆️</span> Upload Files — Day 9
+          </a>
+        </div>
+
+        <h3><span class="eh">🌅</span> Final Morning</h3>
+        <ul>
+          <li>The Waitematā Harbour from the hotel in the early morning — the ferry terminal, the harbour light, the city coming to life. This is a clean, emotionally resonant final clip.</li>
+          <li>A last coffee or breakfast in the Britomart neighbourhood — a brief, human moment that signals the end of the trip without requiring explanation</li>
+          <li>Britomart at morning — the laneways before the day crowds in are peaceful and well-lit</li>
+        </ul>
+
+        <h3><span class="eh">🏡</span> After You're Home</h3>
+        <ul>
+          <li>Trip blog or summary video (200 words / 90 seconds minimum) due after return — start drafting notes on the flight</li>
+          <li>Consumer-facing content piece (DT monthly newsletter feature banner, July 2026)</li>
+          <li>DT Webinar for travel advisors — July 2026, date TBD — confirm with DT Marketing team on return</li>
+          <li>DT Social continues posting non-personalized content for up to 2 weeks post-trip — confirm with the team that your Rallio upload queue is complete</li>
+        </ul>
+
+        <div class="note">Day 9 is a travel day. Don't chase content on departure morning at the expense of a smooth airport experience. A single strong final clip from the harbour is enough — the story is already told.</div>
+
+        <a class="back-top" href="#top">↑ Back to top</a>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════
+         NZ CONTENT TIPS
+    ════════════════════════════════ -->
+
+    <section class="content-section" id="nz-content-tips">
+      <div class="section-header">
+        <p class="section-eyebrow">Reference</p>
+        <h2>NZ-Specific Content Tips</h2>
+        <p class="section-intro">What's different about filming in New Zealand in June — and what this campaign asks for that your usual travel content may not.</p>
+      </div>
+      <div class="section-body">
+        <h3><span class="eh">❄️</span> Winter Is an Asset, Not a Liability</h3>
+        <p>June in New Zealand is mid-winter. Days are short, the light is low, and it can be cold, especially in Rotorua and Wellington. None of this needs to be apologized for or hidden. Low winter light is soft, directional, and extraordinarily flattering for landscapes, wine country, and food. The key reframe: this is moody, intimate New Zealand — not cold, empty New Zealand.</p>
+        <ul>
+          <li>Fog, mist, and steam are all friends. Lean into them.</li>
+          <li>Bare winter vines are graphic and beautiful. Film them as a design element, not an absence of leaves.</li>
+          <li>Winter sunsets at 5:15pm mean golden hour comes to you — you don't have to chase it at 8pm</li>
+        </ul>
+
+        <h3><span class="eh">✈️</span> The Connectivity Story</h3>
+        <p>One of TNZ's four key messages for this campaign is that New Zealand is easy to get to — direct international routes from major North American cities, and easy domestic connectivity once you're there. Every transfer, flight, and ferry is an opportunity to reinforce this.</p>
+        <ul>
+          <li>Domestic flights look small but friendly — not daunting</li>
+          <li>The Waiheke ferry is 40 minutes from downtown Auckland. Show that.</li>
+          <li>The Wairarapa is an hour from Wellington. Show that.</li>
+          <li>Driving shots should look easy and scenic, not challenging</li>
+        </ul>
+
+        <h3><span class="eh">🌿</span> Māori Culture — Film with Respect</h3>
+        <p>Te Pā Tū, Te Puia, Wai Ariki, and the food culture across the trip are all deeply rooted in Māori identity. The campaign values this as the core of what makes New Zealand distinctive — not as a performance for tourists, but as a living culture.</p>
+        <ul>
+          <li>Always ask permission before filming cultural practitioners closely</li>
+          <li>Karakia (prayers and blessings) should not be filmed — be present for them</li>
+          <li>Don't present Māori experiences as exotic or unusual. Frame them as what they are: the host culture of an extraordinary country.</li>
+          <li>Haka and ceremonial performances at Te Pā Tū are designed to be shared — but keep the tone of your caption respectful, not voyeuristic</li>
+        </ul>
+
+        <h3><span class="eh">🚫</span> What to Avoid (Summary)</h3>
+        <ul>
+          <li>No snow, icy roads, or driving on cliff edges — even if you see them</li>
+          <li>No heavy filtering or editing — the campaign is built on authenticity</li>
+          <li>No sheep, hobbit references, or generic rolling-hills shots without specific context</li>
+          <li>No "this place is so remote" energy — the campaign counters that narrative directly</li>
+          <li>No drone without written TNZ approval in advance</li>
+          <li>No filming in the spa pools at Wai Ariki if other guests are visible</li>
+        </ul>
+
+        <a class="back-top" href="#top">↑ Back to top</a>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════
+         CHECKLIST
+    ════════════════════════════════ -->
+    <section class="content-section" id="checklist">
+      <div class="section-header">
+        <p class="section-eyebrow">Reference</p>
+        <h2>Quick Checklist</h2>
+        <p class="section-intro">The short version. Use it every morning before you start shooting.</p>
+      </div>
+      <div class="section-body">
+        <div class="checklist-block">
+          <p class="cb-title">Before Every Shoot</p>
+          <ul>
+            <li>Phone vertical (portrait mode — every single time)</li>
+            <li>Resolution 4K or 1080p, stabilization on</li>
+            <li>Grid overlay on</li>
+            <li>At least 10GB storage free</li>
+            <li>Required hashtags ready to paste: #NZAmbassador #NZMustDo #NZBucketlist #FEEL100inNZ @purenewzealand</li>
+          </ul>
+        </div>
+        <div class="checklist-block">
+          <p class="cb-title">While Shooting</p>
+          <ul>
+            <li>Default to 30–60 second continuous clips — not short bursts</li>
+            <li>Hold every clip at least 5–8 seconds before stopping or moving</li>
+            <li>Move slowly and deliberately. Half your normal pace.</li>
+            <li>Camera eats first — film food before touching it</li>
+            <li>Shoot the hotel room before unpacking</li>
+            <li>Include a person in frame wherever possible — you or someone else</li>
+            <li>No drone without written TNZ approval</li>
+          </ul>
+        </div>
+        <div class="checklist-block">
+          <p class="cb-title">Each Evening</p>
+          <ul>
+            <li>Select 3–5 clips/photos for DT Social Marketing team and send with a one-line note</li>
+            <li>Post daily to your own Instagram/Facebook with all four required hashtags and @purenewzealand</li>
+            <li>Post to TNZ Facebook community group</li>
+            <li>Back up all footage to cloud or portable drive</li>
+          </ul>
+        </div>
+        <div class="checklist-block">
+          <p class="cb-title">Post-Trip</p>
+          <ul>
+            <li>Trip blog (200+ words) or summary video (90+ seconds) published</li>
+            <li>3 x photo albums/reels posted — minimum 8 photos each, location tagged</li>
+            <li>Consumer-facing content piece for DT newsletter (July 2026)</li>
+            <li>DT advisor webinar — confirm July date with marketing team</li>
+            <li>Rallio upload queue confirmed complete</li>
+          </ul>
+        </div>
+        <a class="back-top" href="#top">↑ Back to top</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+      <p>Direct Travel — Marketing &nbsp;|&nbsp; TNZ MICHELIN FAM — Eleanor Dath &nbsp;|&nbsp; June 23 – July 1, 2026 &nbsp;|&nbsp; Questions: adam.brown@dt.com</p>
+    </footer>
+
+  </div><!-- /main -->
+</div><!-- /page-wrap -->
+
+</body>
+</html>
